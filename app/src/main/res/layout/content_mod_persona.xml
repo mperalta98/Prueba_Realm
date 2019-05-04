@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ModPersona">
+
+    <TextView
+        android:id="@+id/set_dni"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="29dp"
+        android:layout_marginLeft="29dp"
+        android:layout_marginTop="38dp"
+        android:text="@string/dni_"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/new_dni"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/dni"
+        app:layout_constraintStart_toStartOf="@+id/set_dni"
+        app:layout_constraintTop_toBottomOf="@+id/set_dni" />
+
+
+    <TextView
+        android:id="@+id/set_nombre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/nombre_"
+        app:layout_constraintStart_toStartOf="@+id/new_dni"
+        app:layout_constraintTop_toBottomOf="@+id/new_dni" />
+
+    <EditText
+        android:id="@+id/new_nombre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/nombre"
+        app:layout_constraintEnd_toEndOf="@+id/set_edad"
+        app:layout_constraintStart_toEndOf="@+id/set_edad"
+        app:layout_constraintTop_toBottomOf="@+id/set_nombre" />
+
+    <TextView
+        android:id="@+id/set_apellido"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="135dp"
+        android:layout_marginEnd="135dp"
+        android:text="@string/apellido_"
+        app:layout_constraintBottom_toTopOf="@+id/new_nombre"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/set_nombre"
+        app:layout_constraintTop_toTopOf="@+id/set_nombre" />
+
+    <EditText
+        android:id="@+id/new_apellido"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/apellido"
+        app:layout_constraintStart_toStartOf="@+id/set_apellido"
+        app:layout_constraintTop_toBottomOf="@+id/set_apellido" />
+
+    <TextView
+        android:id="@+id/set_edad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginLeft="28dp"
+        android:layout_marginTop="18dp"
+        android:text="@string/edad_"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/new_nombre"/>
+
+    <EditText
+        android:id="@+id/new_edad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/edad"
+        app:layout_constraintStart_toStartOf="@+id/set_edad"
+        app:layout_constraintTop_toBottomOf="@+id/set_edad" />
+
+    <Button
+        android:id="@+id/btn_modify"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="72dp"
+        android:layout_marginEnd="72dp"
+        android:layout_marginBottom="75dp"
+        android:text="@string/modificar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</android.support.constraint.ConstraintLayout>
