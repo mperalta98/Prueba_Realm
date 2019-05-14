@@ -18,4 +18,8 @@
     <string name="modificar">Modificar</string>
     <string name="realmddbb">RealmDDBB</string>
     <string name="mperalta">mperalta</string>
+    <string name="genero_">H o M</string>
+    <string name="genero">Genero:</string>
+    <string name="afegir">Afegir</string>
+    <string name="llistar">Llistar</string>
 </resources>

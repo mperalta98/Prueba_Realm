@@ -22,7 +22,7 @@ public class ListPersonaAdapter extends RealmBaseAdapter<Persona> implements Lis
     }
 
     private static class ViewHolder{
-        TextView dni, nombre, apellidos, edad;
+        TextView dni, nombreCompleto, edad, gnro;
         ImageButton btn_delete;
     }
 
@@ -33,9 +33,10 @@ public class ListPersonaAdapter extends RealmBaseAdapter<Persona> implements Lis
             convertView = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_persona,parent,false);
             viewHolder = new ViewHolder();
             viewHolder.dni = convertView.findViewById(R.id.persona_dni);
-            viewHolder.nombre = convertView.findViewById(R.id.persona_nombre);
-            viewHolder.apellidos = convertView.findViewById(R.id.persona_apellido);
+            viewHolder.nombreCompleto = convertView.findViewById(R.id.persona_nombre);
+//            viewHolder.apellidos = convertView.findViewById(R.id.persona_apellido);
             viewHolder.edad = convertView.findViewById(R.id.persona_edad);
+            viewHolder.gnro = convertView.findViewById(R.id.persona_gnr);
             viewHolder.btn_delete = convertView.findViewById(R.id.btn_delete);
             convertView.setTag(viewHolder);
         }else {
@@ -44,9 +45,10 @@ public class ListPersonaAdapter extends RealmBaseAdapter<Persona> implements Lis
 
         final Persona item = adapterData.get(position);
         viewHolder.dni.setText(item.getNumDni());
-        viewHolder.nombre.setText(item.getnombre());
-        viewHolder.apellidos.setText(item.getapellidos());
+        viewHolder.nombreCompleto.setText(item.getnombreCompleto());
+//        viewHolder.apellidos.setText(item.getapellidos());
         viewHolder.edad.setText(String.valueOf(item.getedad()));
+        viewHolder.gnro.setText(item.getgenero());
         viewHolder.btn_delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -59,9 +61,10 @@ public class ListPersonaAdapter extends RealmBaseAdapter<Persona> implements Lis
             public void onClick(View v) {
                 Intent intent = new Intent(finalConvertView.getContext(),ModPersona.class);
                 intent.putExtra("dni",item.getNumDni());
-                intent.putExtra("nombre",item.getnombre());
-                intent.putExtra("apellidos",item.getapellidos());
+                intent.putExtra("nombre",item.getnombreCompleto());
+//                intent.putExtra("apellidos",item.getapellidos());
                 intent.putExtra("edad",item.getedad());
+                intent.putExtra("genero",item.getgenero());
                 finalConvertView.getContext().startActivity(intent);
             }
         });

@@ -17,6 +17,7 @@ import android.widget.ListView;
 import java.util.UUID;
 
 import io.realm.Realm;
+import io.realm.RealmConfiguration;
 import io.realm.RealmQuery;
 import io.realm.RealmResults;
 
@@ -41,15 +42,26 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         navigationView.setNavigationItemSelectedListener(this);
 
         Realm.init(this);
-        Realm realm = Realm.getDefaultInstance();
-        realm.beginTransaction();
 
-        Persona persona = realm.createObject(Persona.class, UUID.randomUUID().toString());
-        persona.setnombre("Marc");
-        persona.setapellidos("probando");
-        persona.setedad(24);
 
-        realm.commitTransaction();
+        RealmConfiguration config = new RealmConfiguration.Builder()
+                .schemaVersion(2) // Must be bumped when the schema changes
+                .migration(new RealmMigration()) // Migration to run instead of throwing an exception
+                .build();
+
+        Realm.setDefaultConfiguration(config);
+
+//        Realm realm = Realm.getDefaultInstance();
+
+//        realm.beginTransaction();
+//
+//        Persona persona = realm.createObject(Persona.class, UUID.randomUUID().toString());
+//        persona.setnombreCompleto("Marc Peralta");
+//        persona.setapellidos("probando");
+//        persona.setedad(24);
+//        persona.setgenero("M");
+//
+//        realm.commitTransaction();
     }
 
     @Override
